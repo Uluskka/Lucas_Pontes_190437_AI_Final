@@ -1,0 +1,11 @@
+tree("Root")
+	parallel
+		repeat mute tree("Foge")
+		repeat mute tree("Dead")
+tree("Foge")
+	while SeePlayer	
+		RunToPlayer
+tree("Dead")
+		sequence
+				isHealthLessThan(0.1)
+				Explode

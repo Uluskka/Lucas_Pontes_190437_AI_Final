@@ -1,0 +1,23 @@
+tree("Root")
+	parallel
+			repeat mute tree("Vigia")
+			repeat mute tree("Dead")
+tree("Vigia")
+ 	while SeePlayerTorrer
+				parallel
+					sequence
+						tree("Seek")
+					sequence
+						repeat mute tree("Atirar")
+tree("Atirar")
+		sequence
+			TargetPlayer
+			LookAtTarget
+			Wait(0.5)
+			Fire						
+tree("Seek")
+			SeekPlayer
+tree("Dead")
+		sequence
+				isHealthLessThan(0.1)
+				Explode
